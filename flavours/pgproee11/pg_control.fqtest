@@ -1,0 +1,73 @@
+$ fq -d pg_control -o flavour=pgproee11 d pg_control
+      |00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f|0123456789abcdef|.{}: pg_control (pg_control)
+0x0000|34 c9 ea 6a e6 00 bf 62                        |4..j...b        |  system_identifier: 7115406925904922932
+0x0000|                        b0 04 45 50            |        ..EP    |  pg_control_version: "Postgres Pro Enterprise 1200" (1346700464)
+0x0000|                                    1e 5d 07 0c|            .]..|  catalog_version_no: 201809182
+0x0010|06 00 00 00                                    |....            |  state: "DB_IN_PRODUCTION" (6)
+0x0010|            00 00 00 00                        |    ....        |  unknown0: raw bits
+0x0010|                        d8 f9 e8 62 00 00 00 00|        ...b....|  time: "Tue, 02 Aug 2022 10:18:00 UTC" (1659435480)
+0x0020|88 3a 35 00 04 00 00 00                        |.:5.....        |  checkPoint: "4/353A88" (17183357576)
+      |                                               |                |  checkPointCopy{}:
+0x0020|                        40 56 52 c8 03 00 00 00|        @VR.....|    redo: "3/C8525640" (16245741120)
+0x0030|01 00 00 00                                    |....            |    ThisTimeLineID: 1
+0x0030|            01 00 00 00                        |    ....        |    PrevTimeLineID: 1
+0x0030|                        01                     |        .       |    fullPageWrites: 1
+0x0040|02 4f f2 54 02 00 00 00                        |.O.T....        |    nextXid: 10015100674
+0x0040|                        00 80 01 00            |        ....    |    nextOid: 98304
+0x0050|00 f2 05 2a 01 00 00 00                        |...*....        |    nextMulti: 5000000000
+0x0050|                        00 00 00 00 00 00 00 00|        ........|    nextMultiOffset: 0
+0x0060|3b e6 0b 54 02 00 00 00                        |;..T....        |    oldestXid: 10000000571
+0x0060|                        01 00 00 00            |        ....    |    oldestXidDB: 1
+0x0070|00 f2 05 2a 01 00 00 00                        |...*....        |    oldestMulti: 5000000000
+0x0070|                        01 00 00 00            |        ....    |    oldestMultiDB: 1
+0x0080|ca f8 e8 62 00 00 00 00                        |...b....        |    time: "Tue, 02 Aug 2022 10:13:30 UTC" (1659435210)
+0x0080|                        00 00 00 00 00 00 00 00|        ........|    oldestCommitTsXid: 0
+0x0090|00 00 00 00 00 00 00 00                        |........        |    newestCommitTsXid: 0
+0x0090|                        f8 4e f2 54 02 00 00 00|        .N.T....|    oldestActiveXid: 10015100664
+0x0030|                           00 00 00 00 00 00 00|         .......|  unknown1: raw bits
+0x0040|                                    00 00 00 00|            ....|  unknown2: raw bits
+0x0060|                                    00 00 00 00|            ....|  unknown3: raw bits
+0x0070|                                    00 00 00 00|            ....|  unknown4: raw bits
+0x00a0|01 00 00 00 00 00 00 00                        |........        |  unloggedLSN: "0/1" (1)
+0x00a0|                        00 00 00 00 00 00 00 00|        ........|  minRecoveryPoint: "0/0" (0)
+0x00b0|00 00 00 00                                    |....            |  minRecoveryPointTLI: 0
+0x00b0|            00 00 00 00                        |    ....        |  unknown5: raw bits
+0x00b0|                        00 00 00 00 00 00 00 00|        ........|  backupStartPoint: "0/0" (0)
+0x00c0|00 00 00 00 00 00 00 00                        |........        |  backupEndPoint: "0/0" (0)
+0x00c0|                        00                     |        .       |  backupEndRequired: 0
+0x00c0|                           00 00 00            |         ...    |  unknown6: raw bits
+0x00c0|                                    01 00 00 00|            ....|  wal_level: "WAL_LEVEL_REPLICA" (1)
+0x00d0|00                                             |.               |  wal_log_hints: 0
+0x00d0|   00 00 00                                    | ...            |  unknown7: raw bits
+0x00d0|            8b 01 00 00                        |    ....        |  MaxConnections: 395
+0x00d0|                        08 00 00 00            |        ....    |  max_worker_processes: 8
+0x00d0|                                    00 00 00 00|            ....|  max_prepared_xacts: 0
+0x00e0|40 00 00 00                                    |@...            |  max_locks_per_xact: 64
+0x00e0|            00                                 |    .           |  track_commit_timestamp: 0
+0x00e0|               00 00 00                        |     ...        |  unknown8: raw bits
+0x00e0|                        08 00 00 00            |        ....    |  maxAlign: 8
+0x00e0|                                    00 00 00 00|            ....|  unknown9: raw bits
+0x00f0|00 00 00 00 87 d6 32 41                        |......2A        |  floatFormat: 1.234567e+06
+0x00f0|                        00 20 00 00            |        . ..    |  blcksz: 8192
+0x00f0|                                    00 00 02 00|            ....|  relseg_size: 131072
+0x0100|00 20 00 00                                    |. ..            |  xlog_blcksz: 8192
+0x0100|            00 00 00 01                        |    ....        |  xlog_seg_size: 16777216
+0x0100|                        40 00 00 00            |        @...    |  nameDataLen: 64
+0x0100|                                    20 00 00 00|             ...|  indexMaxKeys: 32
+0x0110|cc 07 00 00                                    |....            |  toast_max_chunk_size: 1996
+0x0110|            00 08 00 00                        |    ....        |  loblksize: 2048
+0x0110|                        01                     |        .       |  float4ByVal: 1
+0x0110|                           01                  |         .      |  float8ByVal: 1
+0x0110|                              00 00            |          ..    |  unknown10: raw bits
+0x0110|                                    01 00 00 00|            ....|  data_checksum_version: 1
+0x0120|4c 9a 5d 04 f1 83 24 46 3c 50 3e 7d 42 94 69 a7|L.]...$F<P>}B.i.|  mock_authentication_nonce: "4c9a5d04f18324463c503e7d429469a70fe34aacd9f4cb2..." (raw bits)
+0x0130|0f e3 4a ac d9 f4 cb 2a 42 d2 2b 5e 7c f0 1c c9|..J....*B.+^|...|
+0x0140|32 02 00 00                                    |2...            |  icu_version: "50.2.0.0" (562)
+0x0140|            00 00 ff ff                        |    ....        |  pg_old_version: 4294901760
+0x0140|                        01 00 00 00            |        ....    |  oldest_snapshot: 1
+0x0140|                                    00 00 00 00|            ....|  recent_snapshot: 0
+0x0150|00 00 00 00                                    |....            |  active_snapshot: 0
+0x0150|            5d a0 25 99                        |    ].%.        |  crc: 2569379933
+0x0150|                        00 00 00 00 00 00 00 00|        ........|  unknown11: raw bits
+0x0160|00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00|................|
+*     |until 0x1fff.7 (end) (7848)                    |                |
