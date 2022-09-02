@@ -1,4 +1,4 @@
-$ fq -d pgheap -o flavour=pgproee11 ".Pages[0].Tuples[0,-1] | tovalue" 90153
+$ fq -d pgheap -o flavour=pgproee11 ".[0].Tuples[0,-1] | tovalue" 90153
 {
   "Infomask": {
     "HEAP_COMBOCID": 0,

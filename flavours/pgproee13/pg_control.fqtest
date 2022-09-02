@@ -1,69 +1,57 @@
-$ fq -d pg_control -o flavour=pgproee13 d pg_control
-      |00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f|0123456789abcdef|.{}: pg_control (pg_control)
-0x0000|5f 69 c1 ec 6b bc ec 62                        |_i..k..b        |  system_identifier: 7128279481940273503
-0x0000|                        14 05 45 50            |        ..EP    |  pg_control_version: "Postgres Pro Enterprise 1300" (1346700564)
-0x0000|                                    27 6e 0a 0c|            'n..|  catalog_version_no: 202010151
-0x0010|06 00 00 00                                    |....            |  state: "DB_IN_PRODUCTION" (6)
-0x0010|            00 00 00 00                        |    ....        |  unknown0: raw bits
-0x0010|                        66 c2 ec 62 00 00 00 00|        f..b....|  time: "Fri, 05 Aug 2022 07:10:30 UTC" (1659683430)
-0x0020|78 0a e9 02 00 00 00 00                        |x.......        |  checkPoint: "0/2E90A78" (48827000)
-      |                                               |                |  checkPointCopy{}:
-0x0020|                        28 0a e9 02 00 00 00 00|        (.......|    redo: "0/2E90A28" (48826920)
-0x0030|01 00 00 00                                    |....            |    ThisTimeLineID: 1
-0x0030|            01 00 00 00                        |    ....        |    PrevTimeLineID: 1
-0x0030|                        01                     |        .       |    fullPageWrites: 1
-0x0040|92 29 0c 54 02 00 00 00                        |.).T....        |    nextXid: 10000017810
-0x0040|                        00 60 00 00            |        .`..    |    nextOid: 24576
-0x0050|00 f2 05 2a 01 00 00 00                        |...*....        |    nextMulti: 5000000000
-0x0050|                        00 00 00 00 00 00 00 00|        ........|    nextMultiOffset: 0
-0x0060|eb e5 0b 54 02 00 00 00                        |...T....        |    oldestXid: 10000000491
-0x0060|                        01 00 00 00            |        ....    |    oldestXidDB: 1
-0x0070|00 f2 05 2a 01 00 00 00                        |...*....        |    oldestMulti: 5000000000
-0x0070|                        01 00 00 00            |        ....    |    oldestMultiDB: 1
-0x0080|65 c2 ec 62 00 00 00 00                        |e..b....        |    time: "Fri, 05 Aug 2022 07:10:29 UTC" (1659683429)
-0x0080|                        00 00 00 00 00 00 00 00|        ........|    oldestCommitTsXid: 0
-0x0090|00 00 00 00 00 00 00 00                        |........        |    newestCommitTsXid: 0
-0x0090|                        92 29 0c 54 02 00 00 00|        .).T....|    oldestActiveXid: 10000017810
-0x0030|                           00 00 00 00 00 00 00|         .......|  unknown1: raw bits
-0x0040|                                    00 00 00 00|            ....|  unknown2: raw bits
-0x0060|                                    00 00 00 00|            ....|  unknown3: raw bits
-0x0070|                                    00 00 00 00|            ....|  unknown4: raw bits
-0x00a0|e8 03 00 00 00 00 00 00                        |........        |  unloggedLSN: "0/3E8" (1000)
-0x00a0|                        00 00 00 00 00 00 00 00|        ........|  minRecoveryPoint: "0/0" (0)
-0x00b0|00 00 00 00                                    |....            |  minRecoveryPointTLI: 0
-0x00b0|            00 00 00 00                        |    ....        |  unknown5: raw bits
-0x00b0|                        00 00 00 00 00 00 00 00|        ........|  backupStartPoint: "0/0" (0)
-0x00c0|00 00 00 00 00 00 00 00                        |........        |  backupEndPoint: "0/0" (0)
-0x00c0|                        00                     |        .       |  backupEndRequired: 0
-0x00c0|                           00 00 00            |         ...    |  unknown6: raw bits
-0x00c0|                                    01 00 00 00|            ....|  wal_level: "WAL_LEVEL_REPLICA" (1)
-0x00d0|00                                             |.               |  wal_log_hints: 0
-0x00d0|   00 00 00                                    | ...            |  unknown7: raw bits
-0x00d0|            5d 00 00 00                        |    ]...        |  MaxConnections: 93
-0x00d0|                        08 00 00 00            |        ....    |  max_worker_processes: 8
-0x00d0|                                    0a 00 00 00|            ....|  max_wal_senders: 10
-0x00e0|00 00 00 00                                    |....            |  max_prepared_xacts: 0
-0x00e0|            40 00 00 00                        |    @...        |  max_locks_per_xact: 64
-0x00e0|                        00                     |        .       |  track_commit_timestamp: 0
-0x00e0|                           00 00 00            |         ...    |  unknown8: raw bits
-0x00e0|                                    08 00 00 00|            ....|  maxAlign: 8
-0x00f0|00 00 00 00 87 d6 32 41                        |......2A        |  floatFormat: 1.234567e+06
-0x00f0|                        00 20 00 00            |        . ..    |  blcksz: 8192
-0x00f0|                                    00 00 02 00|            ....|  relseg_size: 131072
-0x0100|00 20 00 00                                    |. ..            |  xlog_blcksz: 8192
-0x0100|            00 00 00 01                        |    ....        |  xlog_seg_size: 16777216
-0x0100|                        40 00 00 00            |        @...    |  nameDataLen: 64
-0x0100|                                    20 00 00 00|             ...|  indexMaxKeys: 32
-0x0110|cc 07 00 00                                    |....            |  toast_max_chunk_size: 1996
-0x0110|            00 08 00 00                        |    ....        |  loblksize: 2048
-0x0110|                        01                     |        .       |  float8ByVal: 1
-0x0110|                           00 00 00            |         ...    |  unknown9: raw bits
-0x0110|                                    01 00 00 00|            ....|  data_checksum_version: 1
-0x0120|9e 64 59 21 b6 ed 30 38 f8 be c1 a7 82 40 df cd|.dY!..08.....@..|  mock_authentication_nonce: "9e645921b6ed3038f8bec1a78240dfcd0cbfdafcba223be..." (raw bits)
-0x0130|0c bf da fc ba 22 3b e1 e7 b2 79 50 c6 03 84 39|.....";...yP...9|
-0x0140|3c 03 00 00                                    |<...            |  icu_version: "60.3.0.0" (828)
-0x0140|            00 00 ff ff                        |    ....        |  pg_old_version: 4294901760
-0x0140|                        ab b4 06 87            |        ....    |  crc: 2265363627
-0x0140|                                    00 00 00 00|            ....|  unknown10: raw bits
-0x0150|00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00|................|
-*     |until 0x1fff.7 (end) (7860)                    |                |
+$ fq -d pg_control -o flavour=pgproee13 tovalue pg_control
+{
+  "MaxConnections": 93,
+  "backupEndPoint": "0/0",
+  "backupEndRequired": 0,
+  "backupStartPoint": "0/0",
+  "blcksz": 8192,
+  "catalog_version_no": 202010151,
+  "checkPoint": "0/2E90A78",
+  "checkPointCopy": {
+    "PrevTimeLineID": 1,
+    "ThisTimeLineID": 1,
+    "fullPageWrites": 1,
+    "newestCommitTsXid": 0,
+    "nextMulti": 5000000000,
+    "nextMultiOffset": 0,
+    "nextOid": 24576,
+    "nextXid": 10000017810,
+    "oldestActiveXid": 10000017810,
+    "oldestCommitTsXid": 0,
+    "oldestMulti": 5000000000,
+    "oldestMultiDB": 1,
+    "oldestXid": 10000000491,
+    "oldestXidDB": 1,
+    "redo": "0/2E90A28",
+    "time": "Fri, 05 Aug 2022 07:10:29 UTC"
+  },
+  "crc": 2265363627,
+  "data_checksum_version": 1,
+  "float8ByVal": 1,
+  "floatFormat": 1234567,
+  "icu_version": "60.3.0.0",
+  "indexMaxKeys": 32,
+  "loblksize": 2048,
+  "maxAlign": 8,
+  "max_locks_per_xact": 64,
+  "max_prepared_xacts": 0,
+  "max_wal_senders": 10,
+  "max_worker_processes": 8,
+  "minRecoveryPoint": "0/0",
+  "minRecoveryPointTLI": 0,
+  "mock_authentication_nonce": "9e645921b6ed3038f8bec1a78240dfcd0cbfdafcba223be1e7b27950c6038439",
+  "nameDataLen": 64,
+  "pg_control_version": "Postgres Pro Enterprise 1300",
+  "pg_old_version": 4294901760,
+  "relseg_size": 131072,
+  "state": "DB_IN_PRODUCTION",
+  "system_identifier": 7128279481940273503,
+  "time": "Fri, 05 Aug 2022 07:10:30 UTC",
+  "toast_max_chunk_size": 1996,
+  "track_commit_timestamp": 0,
+  "unloggedLSN": "0/3E8",
+  "wal_level": "WAL_LEVEL_REPLICA",
+  "wal_log_hints": 0,
+  "xlog_blcksz": 8192,
+  "xlog_seg_size": 16777216
+}

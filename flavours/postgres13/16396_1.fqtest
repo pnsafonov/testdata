@@ -1,4 +1,4 @@
-$ fq -d pgheap -o flavour=postgres13 ".Pages[0].Tuples[0,-1] | tovalue" 16396
+$ fq -d pgheap -o flavour=postgres13 ".[0].Tuples[0,-1] | tovalue" 16396
 {
   "Infomask": {
     "HEAP_COMBOCID": 0,
