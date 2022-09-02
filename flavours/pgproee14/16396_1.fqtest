@@ -1,4 +1,4 @@
-$ fq -d pgheap -o flavour=pgproee14 ".[0].PageHeaderData.pd_linp[0,-1] | tovalue" 16396
+$ fq -d pg_heap -o flavour=pgproee14 ".[0].PageHeaderData.pd_linp[0,-1] | tovalue" 16396
 {
   "lp_flags": "LP_REDIRECT",
   "lp_len": 0,

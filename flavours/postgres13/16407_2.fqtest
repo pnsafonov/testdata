@@ -1,4 +1,4 @@
-$ fq -d pgheap -o flavour=postgres13 ".[0].Tuples[0,-1] | tovalue" 16407
+$ fq -d pg_heap -o flavour=postgres13 ".[0].Tuples[0,-1] | tovalue" 16407
 {
   "Infomask": {
     "HEAP_COMBOCID": 0,
